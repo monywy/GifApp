@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { SharedModule } from './shared/shared.module';
 import { GifsModule } from './gifs/gifs.module';
+import {HttpClientModule} from '@angular/common/http'
 
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, SharedModule,GifsModule],
+  imports: [BrowserModule,HttpClientModule, FormsModule, SharedModule,GifsModule],
   declarations: [AppComponent, HelloComponent],
   bootstrap: [AppComponent],
 })
