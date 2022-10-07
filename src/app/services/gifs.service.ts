@@ -38,6 +38,7 @@ export class GifsService {
    .subscribe((respdata:any)=>{
 
     console.log(respdata.data);
+    this.resultados = respdata;
    })
     
 
