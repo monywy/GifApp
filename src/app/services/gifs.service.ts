@@ -8,6 +8,9 @@ import { Injectable } from '@angular/core';
 export class GifsService {
   private _historial : string[] = [];
 
+  // Arreglo para guardar la respuesta.
+  public resultados: any[] = [];
+
   get historial() {
     return [...this._historial];
   }
@@ -25,7 +28,8 @@ export class GifsService {
       this._historial=this._historial.splice(0,10); 
     }
     //Peticion get utilizando HttpClient
-    this.http.get('https://api.giphy.com/v1/gifs/search?api_key=CtbSNZMFPFlbWl1x5KQjtqPOHnE1ema5&q=flores&limit=10')
+    //Se le pasa el valor de query a la busqueda
+    this.http.get(`https://api.giphy.com/v1/gifs/search?api_key=CtbSNZMFPFlbWl1x5KQjtqPOHnE1ema5&q=${ query }&limit=10`)
     //Respuesta de la petición completa
    //.subscribe (resp =>{console.log(resp);}); 
 
