@@ -15,14 +15,14 @@ export class GifsService {
 
     query=query.trim().toLocaleLowerCase();
 
-    this._historial.unshift(query);
     //Validacion elementos repetidos
     
     if( !this._historial.includes(query) ) {
       this._historial.unshift( query );
+       ///Limitar el numero de registros en el historial
+      this._historial=this._historial.splice(0,10); 
     }
-    ///Limitar el numero de registros en el historial
-    this._historial=this._historial.splice(0,10); 
+   
     console.log(this._historial);
 
   }
