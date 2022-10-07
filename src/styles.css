@@ -37,3 +37,9 @@ button:focus {
 .p-1 {
   padding: 1px;
 }
+
+#sidebar {
+  height: 100%;
+  min-height: 100vh;
+  min-width: 18px;
+}
