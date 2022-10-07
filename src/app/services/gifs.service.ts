@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -10,6 +11,7 @@ export class GifsService {
   get historial() {
     return [...this._historial];
   }
+  constructor(private http:HttpClient){}
 
   buscarGifs(query: string){
 
@@ -22,8 +24,13 @@ export class GifsService {
        ///Limitar el numero de registros en el historial
       this._historial=this._historial.splice(0,10); 
     }
-   
-    console.log(this._historial);
+    //Peticion get utilizando HttpClient
+    this.http.get('https://api.giphy.com/v1/gifs/search?api_key=CtbSNZMFPFlbWl1x5KQjtqPOHnE1ema5&q=wisinyyandel&limit=10')
+    //Respuesta de la petición
+    .subscribe (resp =>{
+      console.log(resp);
+    });
+    
 
   }
   
