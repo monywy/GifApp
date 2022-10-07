@@ -16,6 +16,12 @@ export class BusquedaComponent {
   buscar(){
 
     const valor = this.txtBuscar.nativeElement.value;
+
+    //validación del no agregar espacios en blanco
+    if(valor.trim().length==0){
+      return;
+
+    }
     this.gifsServices.buscarGifs(valor);
     this.txtBuscar.nativeElement.value = '';
     console.log(valor);
