@@ -13,9 +13,12 @@ export class GifsService {
 
   buscarGifs(query: string){
 
+    query=query.trim().toLocaleLowerCase();
+
     this._historial.unshift(query);
     //Validacion elementos repetidos
-    if( !this._historial.indexOf( query ) ) {
+    
+    if( !this._historial.includes(query) ) {
       this._historial.unshift( query );
     }
     ///Limitar el numero de registros en el historial
