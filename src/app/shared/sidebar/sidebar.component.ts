@@ -13,8 +13,10 @@ export class SidebarComponent{
     return this.gifsServices.historial;
   }
 
+  //Llamado del servicio
   constructor(private gifsServices:GifsService) { }
 
+  //Método para buscar imagenes del sidebar
   buscar(termino:string){
     console.log(termino);
     this.gifsServices.buscarGifs(termino);
