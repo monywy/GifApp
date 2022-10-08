@@ -1,4 +1,4 @@
-export interface SeachGifsResponse {
+export interface SearchGifsResponse {
   data:       Gif[];
   pagination: Pagination;
   meta:       Meta;
@@ -12,7 +12,7 @@ export interface Gif {
   bitly_gif_url:              string;
   bitly_url:                  string;
   embed_url:                  string;
-  username:                   string;
+  username:                   Username;
   source:                     string;
   title:                      string;
   rating:                     Rating;
@@ -23,9 +23,9 @@ export interface Gif {
   import_datetime:            Date;
   trending_datetime:          string;
   images:                     Images;
-  user?:                      User;
   analytics_response_payload: string;
   analytics:                  Analytics;
+  user?:                      User;
 }
 
 export interface Analytics {
@@ -62,7 +62,6 @@ export interface Images {
   preview_gif:              The480_WStill;
   preview_webp:             The480_WStill;
   "480w_still":             The480_WStill;
-  hd?:                      DownsizedSmall;
 }
 
 export interface The480_WStill {
@@ -100,6 +99,7 @@ export interface Looping {
 export enum Rating {
   G = "g",
   PG = "pg",
+  PG13 = "pg-13",
 }
 
 export enum Type {
@@ -111,12 +111,17 @@ export interface User {
   banner_image:  string;
   banner_url:    string;
   profile_url:   string;
-  username:      string;
+  username:      Username;
   display_name:  string;
   description:   string;
   instagram_url: string;
   website_url:   string;
   is_verified:   boolean;
+}
+
+export enum Username {
+  Empty = "",
+  TOEIAnimationUK = "TOEIAnimationUK",
 }
 
 export interface Meta {
