@@ -41,6 +41,8 @@ export class GifsService {
 
   buscarGifs( query: string = '' ) {
 
+
+    //Validacion de busquedas para evitar registros repetidos o en blanco
     query = query.trim().toLocaleLowerCase();
     
     if( !this._historial.includes( query ) ) {
