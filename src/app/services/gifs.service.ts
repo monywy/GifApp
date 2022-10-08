@@ -1,11 +1,15 @@
+//Servicio con petición http
+
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http'; //importación del servicio http cliente para peticiones
 import { SearchGifsResponse,Gif } from '../interface/gifs.interfaces';
 
 
 @Injectable({
+  //para que mi servicio pueda ser usado en toda la aplicacion
   providedIn: 'root'
 })
+
 export class GifsService {
 
   private apiKey     : string = 'CtbSNZMFPFlbWl1x5KQjtqPOHnE1ema5';
