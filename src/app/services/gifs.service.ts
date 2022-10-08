@@ -24,6 +24,7 @@ export class GifsService {
   }
 
   constructor( private http: HttpClient ) {
+    //Se cargan los datos del LocalStorage, ya que solo se ejecuta una vez.
 
     this._historial = JSON.parse(localStorage.getItem('historial')!) || [];
     this.resultados = JSON.parse(localStorage.getItem('resultados')!) || [];
