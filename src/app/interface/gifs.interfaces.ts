@@ -7,13 +7,19 @@
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
+//
+//
+//
+//
+
+
 export interface SeachGifsResponse {
-  data:       Datum[];
+  data:       Gif[];
   pagination: Pagination;
   meta:       Meta;
 }
 
-export interface Datum {
+export interface Gif {
   type:                       Type;
   id:                         string;
   url:                        string;
