@@ -48,9 +48,10 @@ export class GifsService {
     //Respuesta de la petición completa
    //.subscribe (resp =>{console.log(resp);}); 
 
+
+
+
    //Respuesta de la petición obteniendo unicamente la data
-
-
    .subscribe((respdata:any)=>{
 
      console.log(respdata.data);
