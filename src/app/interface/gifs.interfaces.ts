@@ -1,3 +1,5 @@
+//Creado con la informacion especifica de la respuesta de la petición http mediante https://app.quicktype.io/ para usar hacer un tipado de datos especifico de la petición
+
 export interface SearchGifsResponse {
   data:       Gif[];
   pagination: Pagination;

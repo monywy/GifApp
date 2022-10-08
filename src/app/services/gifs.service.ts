@@ -16,6 +16,7 @@ export class GifsService {
   private servicioUrl: string = 'https://api.giphy.com/v1/gifs';
   private _historial : string[] = [];
 
+  //Tipado de datos deacuerdo a SearchGifsResponse
   public resultados: Gif[] = [];
 
 
@@ -45,7 +46,7 @@ export class GifsService {
     if( !this._historial.includes( query ) ) {
       this._historial.unshift( query );
       this._historial = this._historial.splice(0,10);
-      
+
       //grabando historial----JSON.stringify---->convierte cualquier objeto en un string----el LocalStorage solo guarda strings
       //localStorage.setItem('historial 2',query);
       localStorage.setItem('historial', JSON.stringify( this._historial )  );
