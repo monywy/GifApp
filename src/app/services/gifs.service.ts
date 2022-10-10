@@ -54,6 +54,7 @@ export class GifsService {
       localStorage.setItem('historial', JSON.stringify( this._historial )  );
     }
 
+    //Uso de params para ordenar los datos en la petición a la API
     const params = new HttpParams()
           .set('api_key', this.apiKey)
           .set('limit', '10')
